@@ -20,7 +20,6 @@ Our API provide a [Swagger-UI](https://hub.test.sextant.cloud/index.html) where 
 This [ASP.NET Core Minimal API](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0) receives WebHooks from the ANT Non Profit Cloud HUB.
 To keep it as simple as possible, the application validates only the received hash and outputs the WebHook content to the console.
 
-
 *note: API must be public in order to get called from our ANT Non Profit Cloud HUB. To achieve this, you could use [ngrok](https://ngrok.com/) which is setup quickly.*
 
 ## Setup
@@ -30,6 +29,7 @@ After downloading ngrok and adding your specific port, you must register the Web
 3. Click "WebHooks"
 4. Enter the URL provided by ngrok
 5. Click Save
+6. You will see a Secret. Please Copy it because you need it after starting webhookreceiver
 
 # clientapp
 This .NET 6 ConsoleApp serve as the smallest possible UI to create CRM object in HUB and outputs the result of API-Calls. It uses [refit](https://github.com/reactiveui/refit) to create an API-Client.
