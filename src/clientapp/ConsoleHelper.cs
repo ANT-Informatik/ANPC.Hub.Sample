@@ -13,7 +13,7 @@ public static class ConsoleHelper
             var tenantIdString = Console.ReadLine();
             if (string.IsNullOrEmpty(tenantIdString) || !Guid.TryParse(tenantIdString, out var tenantId))
             {
-                Console.Write("Invalid HUB-API url, retry? (y/n): ");
+                Console.Write("Invalid TenantId, retry? (y/n): ");
                 var retry = Console.ReadLine();
 
                 if (retry != "y")
@@ -211,5 +211,26 @@ public static class ConsoleHelper
                 city,
                 state,
                 country));
+    }
+
+    public static string HubApiKey()
+    {
+        while (true)
+        {
+            Console.Write("API key: ");
+            var apiKey = Console.ReadLine();
+            if (string.IsNullOrEmpty(apiKey))
+            {
+                Console.Write("Invalid API key, retry? (y/n): ");
+                var retry = Console.ReadLine();
+
+                if (retry != "y")
+                    Environment.Exit(1);
+            }
+            else
+            {
+                return apiKey;
+            }
+        }
     }
 }

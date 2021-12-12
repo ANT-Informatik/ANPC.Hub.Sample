@@ -17,13 +17,14 @@ Console.WriteLine("");
 var exit = false;
 
 var tenantId = ConsoleHelper.TenantId();
+var apiKey = ConsoleHelper.HubApiKey();
 var hubApiUri = ConsoleHelper.HubApiUri();
 
 while (!exit)
 {
     var objectType = ConsoleHelper.ObjectType();
     var hubRequest = ConsoleHelper.HubRequest(tenantId, objectType);
-    var hubClient = new HubClient(hubApiUri);
+    var hubClient = new HubClient(hubApiUri, apiKey, tenantId);
 
     await hubClient.CallAndOutputAsync(hubRequest!);
 

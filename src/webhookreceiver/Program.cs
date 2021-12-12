@@ -3,12 +3,12 @@ using System.Text;
 using Microsoft.Extensions.Primitives;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using StackExchange.Redis;
 
 Console.Write("WebHook Secret: ");
 var secret = Console.ReadLine();
 Console.WriteLine("");
 Console.WriteLine("");
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.WebHost
@@ -36,9 +36,18 @@ app.MapPost("/", async (HttpContext context) =>
     if (!IsHashValid(webHook["payload"]?.ToString(Formatting.None)!, sha256HashHeader))
         return Results.BadRequest();
 
+    var connectionMultiplexer = ConnectionMultiplexer.Connect("localhost:6379");
+    var database = connectionMultiplexer.GetDatabase(1);
+
+
+    Console.WriteLine("");
     Console.WriteLine($"WebHook received: {JObject.Parse(webHookJson).ToString(Formatting.Indented)}");
 
-    return Results.Ok();
+    if (!database.KeyExists(webHook["correlationId"]?.ToString()))
+        return Results.Ok();
+
+    Console.WriteLine($"WebHook coming from clientapp. CorrelationId:{webHook["correlationId"]}");
+    return Results.Accepted();
 });
 
 app.Run();

@@ -2,6 +2,7 @@
 using clientapp.Data.Request;
 using clientapp.Refit;
 using Refit;
+using StackExchange.Redis;
 
 namespace clientapp;
 
@@ -9,13 +10,21 @@ internal class HubClient
 {
     private readonly IHubClient hubClient;
 
-    internal HubClient(Uri hubUri)
+    internal HubClient(Uri hubUri, string apiKey, Guid tenantId)
     {
+        var connectionMultiplexer = ConnectionMultiplexer.Connect("localhost:6379");
+        var database = connectionMultiplexer.GetDatabase(1);
+
+        var correlationId = Guid.NewGuid().ToString();
         var httpClient = new HttpClient
         {
             BaseAddress = hubUri
         };
-        httpClient.DefaultRequestHeaders.Add("x-api-key", "ftVrsLQCyYYKjY2YLaE6gB6pqO0XMgzPNH7g3Mfew30nGdmlMibYcpO7KU7p7YP7");
+        httpClient.DefaultRequestHeaders.Add("x-api-key", apiKey);
+        httpClient.DefaultRequestHeaders.Add("x-tenant-id", tenantId.ToString());
+        httpClient.DefaultRequestHeaders.Add("x-correlation-id", correlationId);
+
+        database.StringSetAsync(correlationId, DateTime.UtcNow.ToLongDateString()).Wait();
 
         hubClient = RestService.For<IHubClient>(httpClient, new RefitSettings(new SystemTextJsonContentSerializer(new JsonSerializerOptions
         {
