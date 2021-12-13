@@ -51,6 +51,7 @@ After downloading ngrok and adding your specific port, you must register the Web
 4. Enter the URL provided by ngrok
 5. Click Save
 6. You will see a Secret. Please Copy it because you need it after starting webhookreceiver
+7. Start the solution
 
 # clientapp
 
