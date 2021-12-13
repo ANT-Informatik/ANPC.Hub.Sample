@@ -56,10 +56,6 @@ After downloading ngrok and adding your specific port, you must register the Web
 
 This .NET 6 ConsoleApp serve as the smallest possible UI to create CRM object in HUB and outputs the result of API-Calls. It uses [refit](https://github.com/reactiveui/refit) to create an API-Client.
 
-## Setup
-
-After starting the application you will be asked to provide a TenantId and the Url to out ANT Non Profit Cloud HUB-API
-
 # frameworks and tools
 
 - [ASP.NET Core Minimal API](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0)
