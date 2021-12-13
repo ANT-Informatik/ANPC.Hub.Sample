@@ -62,7 +62,7 @@ After starting the application you will be asked to provide a TenantId and the U
 
 # frameworks and tools
 
-- ASP.NET Core Minimal API
-- ngrok
-- refit
-- redis
+- [ASP.NET Core Minimal API](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0)
+- [ngrok](https://ngrok.com/)
+- [refit](https://github.com/reactiveui/refit)
+- [redis](https://redis.io/)
