@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6AAD217B-43A3-46CE-ACA1-56658E27E92A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webhookreceiver", "src\webhookreceiver\webhookreceiver.csproj", "{FFE174D8-349E-45EB-8BDB-02B5176C7395}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9D361F6E-F84F-45CC-94F7-6471A6CA8FFE}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "clientapp", "src\clientapp\clientapp.csproj", "{2E1C59BC-E462-4650-B7B2-E94149B51CFC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{84C1E7B7-A0E5-4E39-B69B-46038C231464}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{281390C3-363B-44FF-8B56-B3CDAEBAF7FB}"
+	ProjectSection(SolutionItems) = preProject
+		docs\images\arch.png = docs\images\arch.png
+		docs\images\correlationid.png = docs\images\correlationid.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFE174D8-349E-45EB-8BDB-02B5176C7395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFE174D8-349E-45EB-8BDB-02B5176C7395}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFE174D8-349E-45EB-8BDB-02B5176C7395}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFE174D8-349E-45EB-8BDB-02B5176C7395}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E1C59BC-E462-4650-B7B2-E94149B51CFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E1C59BC-E462-4650-B7B2-E94149B51CFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E1C59BC-E462-4650-B7B2-E94149B51CFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E1C59BC-E462-4650-B7B2-E94149B51CFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FFE174D8-349E-45EB-8BDB-02B5176C7395} = {6AAD217B-43A3-46CE-ACA1-56658E27E92A}
+		{2E1C59BC-E462-4650-B7B2-E94149B51CFC} = {6AAD217B-43A3-46CE-ACA1-56658E27E92A}
+		{281390C3-363B-44FF-8B56-B3CDAEBAF7FB} = {84C1E7B7-A0E5-4E39-B69B-46038C231464}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61C5B0A7-D99D-4F16-9B8D-B6C3419FF12A}
+	EndGlobalSection
+EndGlobal
