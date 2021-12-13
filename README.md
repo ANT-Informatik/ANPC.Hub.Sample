@@ -1,6 +1,6 @@
 Following sample .NET 6 projects demonstrate how to integrate with our ANT Non Profit Cloud
 
-# Architecure
+# Architecture
 
 ![architecture](/docs/images/arch.png)
 
